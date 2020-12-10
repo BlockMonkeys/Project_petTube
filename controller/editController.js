@@ -3,7 +3,7 @@ import Video from "../model/Video";
 export const getVideoEdit = async(req, res)=> {
     const videoId = req.params.id;
     const video = await Video.find({ _id: videoId });
-    res.render('edit', { video : video[0] });
+    res.render('edit', { video : video[0], pageTitle: "비디오수정페이지" });
 }
 
 export const postVideoEdit = async(req, res)=> {

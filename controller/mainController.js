@@ -5,7 +5,7 @@ import Video from "../model/Video";
 
 // 로그인/아웃
 export const getLogin = (req, res) => {
-    res.render("login");
+    res.render("login", { pageTitle: "로그인" });
 };
 
 export const postLogin = passport.authenticate("local", {
@@ -20,7 +20,7 @@ export const logout = (req, res) => {
 
 //회원가입
 export const getRegister = (req, res) => {
-    res.render("register");
+    res.render("register", { pageTitle: "회원가입" });
 };
 
 export const postRegister = async(req, res, next) => {
@@ -47,5 +47,5 @@ export const postRegister = async(req, res, next) => {
 //홈
 export const getHome = async(req, res) => {
     const video = await Video.find({});
-    res.render("home", { video });
+    res.render("home", { video, pageTitle: "홈페이지" });
 };
