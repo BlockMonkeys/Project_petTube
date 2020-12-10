@@ -1,0 +1,26 @@
+.videoBlock a{
+    text-decoration: none;
+}
+
+.home__VideoBlock{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 50px;
+}
+
+.home__VideoBlock .video{
+    width:300px;
+    height:200px;
+}
+
+.home__VideoBlock .video_title{
+    font-size: 35px;
+    color: black;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.home__VideoBlock .videoBlock{
+    text-align: center;
+}
+

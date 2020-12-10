@@ -1,0 +1,5 @@
+mixin videoBlock(video={})
+    .videoBlock
+        a(href=`/video/${video.id}`)     
+            video.video(src=`${video.fileUrl}`, controls=true)
+            h1.video_title=video.title

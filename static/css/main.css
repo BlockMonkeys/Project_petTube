@@ -1,0 +1,13 @@
+@import "./reset.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./login_register.css";
+@import "./videoBlock.css";
+@import "./videoDetail.css";
+@import "./upload.css";
+@import "./edit.css";
+@import "./404.css";
+
+body{
+    background-color: floralwhite;
+}
