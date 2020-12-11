@@ -9,6 +9,7 @@ block contents
             p.videoDescription=video.description
             h5=`생성자 : ${user}`
             h5=`생성일 : ${video.createdAt.getFullYear()}년 ${video.createdAt.getMonth()+1}월`
+            h5=`조회수 : ${video.views}`
         .videoDetail__btn
             a(href=`/video/${video.id}/edit`) 영상수정
             a(href=`/video/${video.id}/delete`) 영상삭제
