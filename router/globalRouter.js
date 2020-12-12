@@ -13,7 +13,7 @@ globalRouter.get(routes.LOGOUT, privateUser, logout);
 globalRouter.get(routes.REGISTER, publicUser, getRegister);
 globalRouter.post(routes.REGISTER, publicUser, postRegister, postLogin);
 
-globalRouter.get(routes.SEARCH, search);
+globalRouter.get(routes.SEARCH,privateUser, search);
 globalRouter.get(routes.HOME, privateUser, getHome);
 
 export default globalRouter;

@@ -6,10 +6,6 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required: true,
         trim: true,
-    },
-    videos:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video",
     }
 });
 

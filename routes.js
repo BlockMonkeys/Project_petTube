@@ -10,6 +10,8 @@ const routes = {
     DETAIL : '/:id',
     EDIT : '/:id/edit',
     DELETE : '/:id/delete',
+    COMMENT : '/:id/comment',
+    COMMENT_DELETE : '/:id/comment_delete',
 }
 
 export default routes;

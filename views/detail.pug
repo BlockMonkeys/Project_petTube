@@ -8,8 +8,19 @@ block contents
             h1.videoTitle=video.title
             p.videoDescription=video.description
             h5=`생성자 : ${user}`
-            h5=`생성일 : ${video.createdAt.getFullYear()}년 ${video.createdAt.getMonth()+1}월`
+            h5.createdDate=`생성일 : ${video.createdAt.getFullYear()}년 ${video.createdAt.getMonth()+1}월 ${video.createdAt.getDate()}일`
             h5=`조회수 : ${video.views}`
         .videoDetail__btn
             a(href=`/video/${video.id}/edit`) 영상수정
-            a(href=`/video/${video.id}/delete`) 영상삭제
+            a.video__Delete__btn(href=`/video/${video.id}/delete`) 영상삭제
+        .videoComments
+            form(action=`/video/${video.id}/comment` method="POST")
+                input(type="text", name="comment", placeholder="영상에 대한 의견을 남기세요", minlength="3", maxlength="50", required=true)
+                input(type="submit", value="등록하기")
+        .videoComments__list
+            each items in comments
+                .comments__list
+                    p=items.body
+                    p=`작성자 :${items.author.email}`
+                    if loggedUser.id === items.author.id
+                        a(href=`/video/${items.id}/comment_delete`) ❌
