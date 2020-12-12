@@ -2,7 +2,7 @@ import Video from "../model/Video";
 import routes from "../routes";
 
 export const getVideoUpload = (req, res)=> {
-    res.render('upload');
+    res.render('upload', { pageTitle: "비디오업로드"});
 }
 
 export const postVideoUpload = async(req, res)=> {

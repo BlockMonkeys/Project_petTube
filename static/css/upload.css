@@ -30,3 +30,23 @@
     font-weight: 800;
     cursor: pointer;
 }
+
+.record__container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recordBtn{
+    margin-top: 15px;
+    width: 150px;
+    text-align: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#recordBtn:hover{
+    box-shadow: 1px 1px 1px gray;
+    font-weight: 600;
+}
