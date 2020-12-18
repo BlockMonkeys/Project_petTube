@@ -29,6 +29,7 @@ export const postRegister = async(req, res, next) => {
     const userPassword = req.body.password;
     const userPassword2 = req.body.password2;
     if(userPassword !== userPassword2){
+        req.flash("error", `Password와 Verify Password가 다릅니다 !`);
         res.status(400);
         res.render("register");
     } else {
