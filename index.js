@@ -4,6 +4,7 @@ dotenv.config();
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import passport from "passport";
+import flash from "express-flash";
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -35,6 +36,7 @@ app.use(session({
     saveUninitialized: false,
     store: new CokieStore({ mongooseConnection: mongoose.connection })
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(globalVar); //받은 req.user를 위해 쿠키 생성 이후로 내림

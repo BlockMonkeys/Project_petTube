@@ -6,6 +6,7 @@
 @import "./videoDetail.css";
 @import "./upload.css";
 @import "./edit.css";
+@import "./flashMsg.css";
 
 body{
     background-color: floralwhite;

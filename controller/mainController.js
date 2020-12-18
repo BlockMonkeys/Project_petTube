@@ -10,6 +10,7 @@ export const getLogin = (req, res) => {
 
 export const postLogin = passport.authenticate("local", {
     failureRedirect: "/",
+    failureFlash : "아이디 혹은 패스워드가 다릅니다.",
     successRedirect: "/home",
 });
 
@@ -37,8 +38,9 @@ export const postRegister = async(req, res, next) => {
             });
             await User.register(user, userPassword);
             next();
-        }catch(error){
-            console.log(error);
+        } catch(error) {
+            req.flash("error", `아이디가 중복됩니다 !`);
+            res.render("register");
         }
     }
 };
