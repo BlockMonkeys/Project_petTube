@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import path from "path";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import passport from "passport";
@@ -21,8 +22,9 @@ import { globalVar } from "./middlewares";
 //미들웨어 && 기초셋팅
 const app = express();
 const PORT = 4000;
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static(__dirname + "/static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/uploads", express.static(path.join(__dirname + "uploads")));
+app.use("/static", express.static(path.join(__dirname + "static")));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
