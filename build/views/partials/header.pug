@@ -1,0 +1,18 @@
+header.header
+    if loggedUser
+        .privateUser__header
+            .header-icon
+                a(href="/home")
+                    i.fas.fa-cat  Pet-Tube
+            .header-content
+                form(action="/search")
+                    input(type="text", name="searchingBy", placeholder="검색", maxlength="15")
+            .header-menu
+                a(href="/video/upload") 업로드
+                a(href="/logout") 로그아웃
+    else
+        .publicUser__header
+            .header-icon
+                i.fas.fa-cat
+            .header-content
+                | WELCOME TO PET-TUBE
