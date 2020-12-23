@@ -1,8 +1,0 @@
-extends layout/main
-
-block contents
-    .edit__container
-        form(action=`/video/${video._id}/edit`, method="POST")
-            input(type="text", name="title", placeholder="영상제목", required=true, value=video.title)
-            textarea(name="description", placeholder="영상설명" cols="37", rows="10", required=true)=video.description
-            input.edit__btn(type="submit", value="수정하기")
