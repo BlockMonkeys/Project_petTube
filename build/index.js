@@ -4,6 +4,8 @@ var _express = _interopRequireDefault(require("express"));
 
 var _dotenv = _interopRequireDefault(require("dotenv"));
 
+var _path = _interopRequireDefault(require("path"));
+
 var _cookieParser = _interopRequireDefault(require("cookie-parser"));
 
 var _bodyParser = _interopRequireDefault(require("body-parser"));
@@ -39,8 +41,9 @@ _dotenv["default"].config();
 //미들웨어 && 기초셋팅
 var app = (0, _express["default"])();
 var PORT = 4000;
-app.use("/uploads", _express["default"]["static"]("uploads"));
-app.use("/static", _express["default"]["static"](__dirname + "/static"));
+app.set("views", _path["default"].join(__dirname, "views"));
+app.use("/uploads", _express["default"]["static"](_path["default"].join(__dirname + "uploads")));
+app.use("/static", _express["default"]["static"](_path["default"].join(__dirname + "static")));
 app.use((0, _cookieParser["default"])());
 app.use(_bodyParser["default"].urlencoded({
   extended: true
